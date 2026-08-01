@@ -75,7 +75,6 @@ permission:
   task_validate: allow
   "git_checkpoint": allow
   "context7_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle

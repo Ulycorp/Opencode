@@ -1,6 +1,6 @@
 # Workspace OpenCode multi-agent
 
-Implémentation de la configuration décrite dans `docs/`, ciblée et épinglée sur **OpenCode 1.18.10**. Le workspace expose 39 rôles, 10 commandes, des skills méthodologiques, des outils déterministes, huit intégrations MCP, des contrats versionnés et un serveur juridique français en lecture seule.
+Implémentation de la configuration décrite dans `docs/`, ciblée et épinglée sur **OpenCode 1.18.10**. Le workspace expose 39 rôles, 10 commandes, des skills méthodologiques, des outils déterministes, six intégrations MCP, des contrats versionnés et un serveur juridique français en lecture seule.
 
 ## Démarrage
 
@@ -32,7 +32,7 @@ Copiez `.env.example` vers un fichier `.env` local non versionné, ou injectez l
 - GitHub est utilisé via la CLI `gh` ; aucun MCP GitHub n'est activé.
 - Semrush, TrendTrack et Higgsfield utilisent leur flux OAuth distant quand le service le permet.
 - TrendTrack demande uniquement les scopes de lecture dans `opencode.json`.
-- Context7, Playwright et Shopify Dev MCP sont lancés localement via `npx`.
+- Context7 et Playwright sont lancés localement via `npx`. Shopify est utilisé par la CLI `shopify` installée sur la machine, sans MCP Shopify.
 - `fr_legal` utilise PISTE pour Légifrance et les sources publiques officielles BOFiP/CNIL.
 
 Authentifiez un MCP OAuth avec :

@@ -75,7 +75,6 @@ permission:
   "report_*": allow
   "evidence_*": allow
   "context7_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle

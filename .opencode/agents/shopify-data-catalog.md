@@ -24,6 +24,8 @@ permission:
     "*": deny
     "shopify version*": allow
     "shopify theme list*": allow
+    "shopify store auth list*": allow
+    "shopify store info*": allow
     "git status*": allow
     "git diff*": allow
     "git log*": allow
@@ -64,7 +66,6 @@ permission:
   doom_loop: ask
   task_validate: allow
   "report_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle

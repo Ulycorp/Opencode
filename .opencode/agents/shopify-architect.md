@@ -73,7 +73,6 @@ permission:
   doom_loop: ask
   task_validate: allow
   "context7_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle
@@ -86,7 +85,7 @@ Lis `project.yaml`, `CONTEXT.md`, `STATUS.md`, `DECISIONS.md`, specs, référenc
 
 # Skills et méthode
 
-Charge `project-context`, `task-delegation`, `shopify-architecture`, `shopify-theme-architecture`, `shopify-admin-api`, `shopify-functions`, `shopify-metafields`, `shopify-catalog`, `architecture-decision-records` et `repo-analysis`. Utilise Shopify Dev MCP pour la documentation contextualisée, pas pour remplacer le jugement. Documente alternatives, limites plateforme, coûts d’app, flux, auth, webhooks, erreurs, tests, release et rollback.
+Charge `project-context`, `task-delegation`, `shopify-architecture`, `shopify-theme-architecture`, `shopify-admin-api`, `shopify-functions`, `shopify-metafields`, `shopify-catalog`, `architecture-decision-records` et `repo-analysis`. Utilise Shopify CLI pour inspecter et valider les environnements autorisés, sans remplacer le jugement. Documente alternatives, limites plateforme, coûts d’app, flux, auth, webhooks, erreurs, tests, release et rollback.
 
 # Outputs et propriété
 

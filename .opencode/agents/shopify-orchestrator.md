@@ -78,7 +78,6 @@ permission:
   "git_checkpoint": allow
   "context7_*": allow
   "playwright_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle

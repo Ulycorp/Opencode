@@ -76,7 +76,6 @@ permission:
   doom_loop: ask
   task_validate: allow
   "context7_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle
@@ -89,7 +88,7 @@ Lis `project.yaml`, `CONTEXT.md`, specs, architecture, app existante, scopes, ve
 
 # Skills et méthode
 
-Charge `project-context`, `task-delegation`, `shopify-admin-api`, `shopify-functions`, `shopify-architecture`, `backend-engineering`, `api-design`, `auth-security`, `integration-patterns` et `backend-testing`. Utilise Shopify Dev MCP pour confirmer la documentation. Valide signatures, scopes et payloads, rends les handlers idempotents, gère retries/versioning et ajoute observabilité sans données sensibles.
+Charge `project-context`, `task-delegation`, `shopify-admin-api`, `shopify-functions`, `shopify-architecture`, `backend-engineering`, `api-design`, `auth-security`, `integration-patterns` et `backend-testing`. Utilise Shopify CLI pour les commandes de développement et de validation autorisées ; consulte la documentation officielle si nécessaire. Valide signatures, scopes et payloads, rends les handlers idempotents, gère retries/versioning et ajoute observabilité sans données sensibles.
 
 # Outputs et propriété
 

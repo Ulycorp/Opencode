@@ -1172,24 +1172,18 @@ Responsabilités :
 
 ---
 
-# 20. Shopify Dev MCP
+# 20. Shopify CLI
 
-Le serveur **Shopify Dev MCP** doit être intégré aux agents Shopify.
+Shopify CLI est l'intégration locale unique des agents Shopify. Elle est installée sur la machine et les agents n'exécutent que les commandes explicitement autorisées par leur rôle.
 
-Démarrage typique :
+Elle sert notamment à :
 
-```bash
-npx -y @shopify/dev-mcp@latest
-```
+- inspecter la version CLI et les thèmes ;
+- lancer Theme Check et les environnements de développement ;
+- créer une preview ou préparer une livraison soumise à gate ;
+- travailler sur les apps, extensions et Functions.
 
-Il sert notamment à :
-
-- récupérer de la documentation Shopify adaptée au contexte ;
-- travailler avec Polaris ;
-- accélérer la génération d'intégrations ;
-- aider sur Functions et APIs Shopify.
-
-Il ne remplace pas Shopify CLI.
+Les commandes qui écrivent dans une boutique, déploient une app ou publient un thème restent soumises à approbation explicite.
 
 ---
 
@@ -2370,9 +2364,9 @@ Agents :
 - QA ;
 - étude e-commerce si besoin.
 
-### Shopify Dev MCP
+### Shopify CLI
 
-Agents Shopify uniquement par défaut.
+Agents Shopify uniquement par défaut, sans serveur MCP.
 
 ## MCP custom
 
@@ -2892,11 +2886,6 @@ Le futur document d'implémentation devra choisir une cible précise.
     "playwright": {
       "type": "local",
       "command": ["npx", "@playwright/mcp@latest"],
-      "enabled": true
-    },
-    "shopify-dev": {
-      "type": "local",
-      "command": ["npx", "-y", "@shopify/dev-mcp@latest"],
       "enabled": true
     },
     "semrush": {
@@ -3498,7 +3487,6 @@ https://mcp.higgsfield.ai/mcp
 
 - https://shopify.dev/docs/storefronts/themes/tools/cli
 - https://shopify.dev/docs/api/shopify-cli/theme
-- https://shopify.dev/docs/api/polaris/using-mcp
 - https://shopify.dev/docs/apps/build/ai-toolkit
 
 ## Expo / EAS

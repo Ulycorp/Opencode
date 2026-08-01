@@ -37,7 +37,7 @@ const expectedAgentModels = new Map([
 
 const expectedCommands = ["projet", "market", "opportunity", "marketing", "build-web", "build-mobile", "build-shopify", "audit", "status", "sync"]
 const expectedTools = ["project_init", "project_resolve", "project_status", "project_index", "report_validate", "evidence_register", "task_validate", "git_checkpoint"]
-const expectedMcp = ["context7", "playwright", "shopify_dev", "semrush", "trendtrack", "higgsfield", "fr_legal"]
+const expectedMcp = ["context7", "playwright", "semrush", "trendtrack", "higgsfield", "fr_legal"]
 const expectedSkills = [
   "workspace-routing", "project-context", "task-delegation", "cross-domain-planning", "software-delivery",
   "architecture-decision-records", "repo-analysis", "git-workflow", "testing-strategy", "security-gate", "release-gate",

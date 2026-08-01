@@ -51,7 +51,6 @@
     },
     "context7_*": "deny",
     "playwright_*": "deny",
-    "shopify_dev_*": "deny",
     "semrush_*": "deny",
     "trendtrack_*": "deny",
     "higgsfield_*": "deny",
@@ -74,16 +73,6 @@
         "npx",
         "-y",
         "@playwright/mcp@latest"
-      ],
-      "enabled": true,
-      "timeout": 30000
-    },
-    "shopify_dev": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@shopify/dev-mcp@latest"
       ],
       "enabled": true,
       "timeout": 30000

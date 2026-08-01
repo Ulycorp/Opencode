@@ -68,7 +68,6 @@ permission:
   task_validate: allow
   "evidence_*": allow
   "playwright_*": allow
-  "shopify_dev_*": allow
 ---
 
 # Rôle
