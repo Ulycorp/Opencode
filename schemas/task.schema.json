@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.open-code-workspace/schemas/task.schema.json",
+  "title": "task.v1 delegation contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "task_id",
+    "project_id",
+    "requested_by",
+    "target_agent",
+    "objective",
+    "expected_output",
+    "output_path",
+    "delegation_depth",
+    "visited_agents",
+    "deadline_policy"
+  ],
+  "properties": {
+    "schema": { "const": "task.v1" },
+    "task_id": { "type": "string", "format": "uuid" },
+    "project_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "requested_by": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "target_agent": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "objective": { "type": "string", "minLength": 12, "maxLength": 2000 },
+    "expected_output": { "type": "string", "minLength": 3, "maxLength": 500 },
+    "output_path": {
+      "type": "string",
+      "pattern": "^(?:projects|dev)/[a-z0-9]+(?:-[a-z0-9]+)*(?:/[A-Za-z0-9._ -]+)+$"
+    },
+    "delegation_depth": { "type": "integer", "minimum": 0, "maximum": 4 },
+    "visited_agents": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "deadline_policy": { "enum": ["best-effort", "hard-deadline", "none"] },
+    "deadline": { "type": ["string", "null"], "format": "date-time" }
+  }
+}

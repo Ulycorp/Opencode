@@ -1,0 +1,7 @@
+workspace_version: "1.0.0"
+opencode_version: "1.18.10"
+agent_contract_version: "1.0.0"
+report_schema_version: "1.0.0"
+project_schema_version: "1.0.0"
+evidence_schema_version: "1.0.0"
+task_schema_version: "1.0.0"

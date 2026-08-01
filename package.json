@@ -1,0 +1,28 @@
+{
+  "name": "opencode-multi-agent-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.2"
+  },
+  "scripts": {
+    "validate": "node internal/validators/validate-workspace.mjs",
+    "test": "npm run test:workspace && npm run test:fr-legal",
+    "test:workspace": "node --test tests/*.test.mjs",
+    "test:fr-legal": "node --experimental-strip-types --test internal/mcp/fr-legal/tests/*.test.ts",
+    "check": "npm run validate && npm test",
+    "fr-legal:inspect": "node --experimental-strip-types internal/mcp/fr-legal/src/server.ts --self-test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "@opencode-ai/plugin": "1.18.10",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "opencode-ai": "1.18.10"
+  }
+}

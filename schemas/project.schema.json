@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.open-code-workspace/schemas/project.schema.json",
+  "title": "OpenCode workspace project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "workspace_version",
+    "id",
+    "name",
+    "status",
+    "created_at",
+    "updated_at",
+    "owner",
+    "description",
+    "domains",
+    "repositories",
+    "deployment",
+    "market",
+    "marketing",
+    "legal",
+    "it"
+  ],
+  "properties": {
+    "schema_version": { "const": "project.v1" },
+    "workspace_version": { "const": "1.0.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 80 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "status": { "$ref": "#/$defs/status" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "owner": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "domains": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["market", "marketing", "web", "mobile", "shopify", "legal"] }
+    },
+    "repositories": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["business_path", "web_path", "mobile_path", "shopify_path"],
+      "properties": {
+        "business_path": { "type": "string", "pattern": "^projects/[a-z0-9]+(?:-[a-z0-9]+)*(?:/[A-Za-z0-9._ -]+)*$" },
+        "web_path": { "type": ["string", "null"], "pattern": "^dev/[a-z0-9]+(?:-[a-z0-9]+)*/web(?:/[A-Za-z0-9._ -]+)*$" },
+        "mobile_path": { "type": ["string", "null"], "pattern": "^dev/[a-z0-9]+(?:-[a-z0-9]+)*/mobile(?:/[A-Za-z0-9._ -]+)*$" },
+        "shopify_path": { "type": ["string", "null"], "pattern": "^dev/[a-z0-9]+(?:-[a-z0-9]+)*/shopify(?:/[A-Za-z0-9._ -]+)*$" }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["web", "mobile", "shopify"],
+      "properties": {
+        "web": { "type": ["string", "null"] },
+        "mobile": { "type": ["string", "null"] },
+        "shopify": { "type": ["string", "null"] }
+      }
+    },
+    "market": { "$ref": "#/$defs/domainObject" },
+    "marketing": { "$ref": "#/$defs/domainObject" },
+    "legal": { "$ref": "#/$defs/domainObject" },
+    "it": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["web", "mobile", "shopify"],
+      "properties": {
+        "web": { "$ref": "#/$defs/status" },
+        "mobile": { "$ref": "#/$defs/status" },
+        "shopify": { "$ref": "#/$defs/status" }
+      }
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": ["active", "pending", "in_progress", "not_started", "complete", "blocked", "archived", "n/a"]
+    },
+    "domainObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": { "status": { "$ref": "#/$defs/status" } }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai/gpt-5.6-sol",
+  "small_model": "openai/gpt-5.6-luna",
+  "default_agent": "global-orchestrator",
+  "subagent_depth": 4,
+  "autoupdate": false,
+  "share": "disabled",
+  "snapshot": true,
+  "lsp": true,
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "watcher": {
+    "ignore": [
+      ".git/**",
+      "node_modules/**",
+      "**/dist/**",
+      "**/coverage/**",
+      "projects/*/marketing/creatives/generated/**"
+    ]
+  },
+  "permission": {
+    "*": "ask",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "skill": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "edit": "ask",
+    "task": "ask",
+    "todowrite": "allow",
+    "question": "allow",
+    "external_directory": "deny",
+    "doom_loop": "ask",
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git branch --show-current*": "allow",
+      "git push --force*": "deny",
+      "git push -f*": "deny",
+      "git reset --hard*": "deny",
+      "git clean -fd*": "deny",
+      "git branch -D*": "deny",
+      "rm -rf*": "deny"
+    },
+    "context7_*": "deny",
+    "playwright_*": "deny",
+    "shopify_dev_*": "deny",
+    "semrush_*": "deny",
+    "trendtrack_*": "deny",
+    "higgsfield_*": "deny",
+    "fr_legal_*": "deny"
+  },
+  "mcp": {
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
+      "enabled": true,
+      "timeout": 20000
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "shopify_dev": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@shopify/dev-mcp@latest"
+      ],
+      "enabled": true,
+      "timeout": 30000
+    },
+    "semrush": {
+      "type": "remote",
+      "url": "https://mcp.semrush.com/v2/mcp",
+      "enabled": true,
+      "timeout": 20000
+    },
+    "trendtrack": {
+      "type": "remote",
+      "url": "https://api.trendtrack.io/v1/mcp",
+      "oauth": {
+        "scope": "trendtrack:identity.read trendtrack:discovery.read trendtrack:brandtrackers.read trendtrack:favorites.read trendtrack:workspace_insights.read"
+      },
+      "enabled": true,
+      "timeout": 20000
+    },
+    "higgsfield": {
+      "type": "remote",
+      "url": "https://mcp.higgsfield.ai/mcp",
+      "enabled": true,
+      "timeout": 30000
+    },
+    "fr_legal": {
+      "type": "local",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "internal/mcp/fr-legal/src/server.ts"
+      ],
+      "cwd": ".",
+      "enabled": true,
+      "timeout": 20000
+    }
+  }
+}

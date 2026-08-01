@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.open-code-workspace/schemas/evidence.schema.json",
+  "title": "evidence.v1 source record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "evidence_id",
+    "project",
+    "scope",
+    "url",
+    "title",
+    "provider",
+    "checked_at",
+    "agent",
+    "claim",
+    "confidence"
+  ],
+  "properties": {
+    "schema": { "const": "evidence.v1" },
+    "evidence_id": { "type": "string", "format": "uuid" },
+    "project": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "scope": { "enum": ["market", "marketing", "web", "mobile", "shopify", "legal", "opportunity"] },
+    "url": { "type": "string", "format": "uri" },
+    "title": { "type": "string", "minLength": 1 },
+    "provider": { "type": "string", "minLength": 1 },
+    "checked_at": { "type": "string", "format": "date-time" },
+    "agent": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "claim": { "type": "string", "minLength": 1 },
+    "confidence": { "enum": ["FACT", "SOURCE", "INFERENCE", "ESTIMATE", "UNKNOWN"] },
+    "source_type": { "enum": ["official", "primary", "vendor", "study", "media", "community", "inference"] },
+    "retrieved_via": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

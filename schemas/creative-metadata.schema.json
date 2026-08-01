@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.open-code-workspace/schemas/creative-metadata.schema.json",
+  "title": "creative asset metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "asset_id", "created_at", "agent", "project", "campaign", "persona", "source_brief", "provider", "prompt_reference", "status"],
+  "properties": {
+    "schema": { "const": "creative-metadata.v1" },
+    "asset_id": { "type": "string", "format": "uuid" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "agent": { "const": "creative-producer" },
+    "project": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "campaign": { "type": "string" },
+    "persona": { "type": "string" },
+    "source_brief": { "type": "string" },
+    "provider": { "type": "string" },
+    "prompt_reference": { "type": "string" },
+    "status": { "enum": ["draft", "approved", "rejected", "published", "archived"] },
+    "asset_path": { "type": "string" },
+    "generation_id": { "type": ["string", "null"] }
+  }
+}

@@ -1,0 +1,37 @@
+schema_version: "project.v1"
+workspace_version: "{{WORKSPACE_VERSION}}"
+
+id: "{{SLUG}}"
+name: "{{YAML_NAME}}"
+status: "active"
+
+created_at: "{{CREATED_AT}}"
+updated_at: "{{CREATED_AT}}"
+
+owner: "workspace"
+description: "{{YAML_DESCRIPTION}}"
+
+domains: {{DOMAINS_JSON}}
+
+repositories:
+  business_path: "projects/{{SLUG}}"
+  web_path: "dev/{{SLUG}}/web"
+  mobile_path: "dev/{{SLUG}}/mobile"
+  shopify_path: "dev/{{SLUG}}/shopify"
+
+deployment:
+  web: null
+  mobile: null
+  shopify: null
+
+market:
+  status: "pending"
+marketing:
+  status: "not_started"
+legal:
+  status: "not_started"
+
+it:
+  web: "not_started"
+  mobile: "not_started"
+  shopify: "not_started"

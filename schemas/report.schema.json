@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.open-code-workspace/schemas/report.schema.json",
+  "title": "report.v1 Markdown frontmatter",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema",
+    "workspace_version",
+    "project",
+    "agent",
+    "type",
+    "status",
+    "generated_at",
+    "sources_checked_at"
+  ],
+  "properties": {
+    "schema": { "const": "report.v1" },
+    "workspace_version": { "const": "1.0.0" },
+    "project": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "agent": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "type": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$" },
+    "status": { "enum": ["draft", "partial", "complete", "blocked", "superseded"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "sources_checked_at": { "type": "string", "format": "date" },
+    "workflow": { "type": "string" },
+    "commit": { "type": ["string", "null"] }
+  },
+  "x-required-markdown-sections": [
+    "Résumé exécutif",
+    "Objectif",
+    "Méthodologie",
+    "Données / observations",
+    "Analyse",
+    "Recommandations",
+    "Limites",
+    "Sources"
+  ]
+}

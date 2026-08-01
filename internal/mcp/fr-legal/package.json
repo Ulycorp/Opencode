@@ -1,0 +1,9 @@
+{
+  "name": "@workspace/fr-legal-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  }
+}

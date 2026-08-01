@@ -1,0 +1,13 @@
+schema: "creative-metadata.v1"
+asset_id: "{{ASSET_ID}}"
+created_at: "{{CREATED_AT}}"
+agent: "creative-producer"
+project: "{{PROJECT}}"
+campaign: "{{CAMPAIGN}}"
+persona: "{{PERSONA}}"
+source_brief: "{{SOURCE_BRIEF}}"
+provider: "higgsfield"
+prompt_reference: "{{PROMPT_REFERENCE}}"
+status: "draft"
+asset_path: "{{ASSET_PATH}}"
+generation_id: null

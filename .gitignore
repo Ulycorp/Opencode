@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+*.log
+.cache/
+.opencode/cache/
+
+# Local OpenCode and platform state
+.opencode/auth/
+.opencode/state/
+.DS_Store
+Thumbs.db
+
+# Development repositories are independent Git repositories, never part of the business workspace repository.
+dev/
+
+# Generated creative assets are intentionally versioned with their metadata.
+# Use Git LFS at repository setup time for formats/sizes that warrant it.
